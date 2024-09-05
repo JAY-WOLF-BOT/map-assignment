@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;">
+      <h1>ARRANGING MAPPED ARRAY</h1>  
+   </div>
+   <div>
+    <p>ARRAY</p>
+    <p id="array"></p>
+   </div>
+   <div>
+    <p>MAPPED ARRAY</p>
+    <p id="map"></p>
+   </div>
+   <div>
+    <button onclick="ascending()">Ascending Order</button>
+    <button onclick="descending()">Descending Order</button>
+   </div>
+
+   <p id="result"></p>
+    
+
+   <script>
+    var array = [10,39,40,70,30,100];
+    document.getElementById("array").innerHTML = array;
+
+    function multiply(num){
+     return num * 10;
+    } 
+
+    var multi = array.map(multiply);
+    document.getElementById("map").innerHTML = multi;
+
+    function ascending(){
+        multi.sort(function(a, b){return a - b});
+        document.getElementById("result").innerHTML = multi;
+    }
+    function descending(){
+        multi.sort(function(a, b){return b - a});
+        document.getElementById("result").innerHTML = multi;
+    }
+   </script>
+</body>
+</html>
